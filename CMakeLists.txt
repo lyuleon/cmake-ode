@@ -7,6 +7,7 @@ set(CMAKE_CXX_EXTENSIONS        OFF)
 
 add_subdirectory(external/nvImage)
 add_subdirectory(external/ode)
+add_subdirectory(external/glfw)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 add_executable(execute main.cpp)
@@ -17,4 +18,4 @@ add_executable(execute main.cpp)
 #target_link_libraries(execute ${ODE_LIB})
 #target_include_directories(execute PRIVATE ${ODE_INCLUDE_DIR})
 
-target_link_libraries(execute ode pthread)
+target_link_libraries(execute ode pthread glfw)
