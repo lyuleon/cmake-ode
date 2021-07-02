@@ -12,10 +12,11 @@ find_package(OpenGL REQUIRED)
 message(STATUS "Found OpenGL in ${OpenGL_INCLUDE_DIR}")
 find_package(X11 REQUIRED)
 message(STATUS "Found X11 in ${X11_INCLUDE_DIR}")
-find_package(GLM REQUIRED)
-message(STATUS "GLM included at ${GLM_INCLUDE_DIR}")
-find_package(GLFW3 REQUIRED)
-message(STATUS "Found GLFW3 in ${GLFW3_INCLUDE_DIR}")
+
+#find_package(GLM REQUIRED)
+#message(STATUS "GLM included at ${GLM_INCLUDE_DIR}")
+#find_package(GLFW3 REQUIRED)
+#message(STATUS "Found GLFW3 in ${GLFW3_INCLUDE_DIR}")
 
 add_definitions(${OPENGL_DEFINITIONS})
 
@@ -34,5 +35,13 @@ add_subdirectory(external/glfw)
 add_subdirectory(external/vectorial)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+set(EXECUTE_LIB	
+	glm
+	nvImage
+	ode
+	glfw
+	vectorial
+	pthread	
+)
 add_executable(execute main.cpp)
-target_link_libraries(execute ode pthread glfw private vectorial glm)
+target_link_libraries(execute ${EXECUTE_LIB})

@@ -1,4 +1,6 @@
 #include <ode/ode.h>
+#include <vectorial/vec3f.h>
+#include <vectorial/mat4f.h>
 #include <iostream>
 
 struct CollisionData {
@@ -9,6 +11,8 @@ struct CollisionData {
 
 void handle_collisions(void *data, dGeomID geom1, dGeomID geom2)
 {
+  vectorial::vec3f linear1;
+  vectorial::vec3f linear2;
   auto collision_data = static_cast<CollisionData*>(data);
 
   // Get the rigid bodies associated with the geometries

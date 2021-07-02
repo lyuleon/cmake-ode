@@ -1,13 +1,13 @@
 include(ExternalProject)
 
 set(ODE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-set(ODE_PREFIX_DIR ${CMAKE_CURRENT_BINARY_DIR})
 set(ODE_INSTALL_DIR ${CMAKE_BINARY_DIR}/lib/ode)
+set(ODE_PREFIX_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
 message(STATUS "ODE_SOURCE_DIR = ${ODE_SOURCE_DIR}")
 message(STATUS "ODE_PREFIX_DIR = ${ODE_PREFIX_DIR}")
 
-set(ODE_CONFIGURE    cd ${ODE_PREFIX_DIR} && ${ODE_SOURCE_DIR}/configure --prefix=${ODE_INSTALL_DIR} --enable-double-precision)
+set(ODE_CONFIGURE    cd ${ODE_PREFIX_DIR} && ${ODE_SOURCE_DIR}/configure --prefix=${ODE_INSTALL_DIR})
 set(ODE_MAKE         cd ${ODE_PREFIX_DIR} && make)
 set(ODE_INSTALL      cd ${ODE_PREFIX_DIR} && make install)
 
@@ -26,7 +26,8 @@ set(ODE_LIB       ${ODE_INSTALL_DIR}/lib/libode.a)
 set(ODE_INCLUDE_DIR ${ODE_INSTALL_DIR}/include)
 
 add_library(ode STATIC IMPORTED GLOBAL)
-add_dependencies(ode libode)
 
 set_target_properties(ode PROPERTIES IMPORTED_LOCATION ${ODE_LIB})
-set_target_properties(ode PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${ODE_INCLUDE_DIR})
+set_target_properties(ode PROPERTIES INCLUDE_DIRECTORIES ${ODE_INCLUDE_DIR})
+
+add_dependencies(ode libode)
