@@ -7,9 +7,12 @@ project(externalTest)
 set(CMAKE_CXX_STANDARD          11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS        OFF)
+list(APPEND CMAKE_CXX_FLAGS "-std=c++11")
 
 find_package(OpenGL REQUIRED)
 message(STATUS "Found OpenGL in ${OpenGL_INCLUDE_DIR}")
+find_package(GLEW REQUIRED)
+message(STATUS "Found GLEW in ${GLEW_INCLUDE_DIR}")
 find_package(X11 REQUIRED)
 message(STATUS "Found X11 in ${X11_INCLUDE_DIR}")
 
@@ -34,15 +37,4 @@ add_subdirectory(src/network)
 add_subdirectory(src/protocol)
 add_subdirectory(src/virtualgo)
 
-
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-set(EXECUTE_LIB	
-	glm
-	nvImage
-	ode
-	glfw
-	vectorial
-	pthread	
-)
-add_executable(execute main.cpp)
-target_link_libraries(execute ${EXECUTE_LIB})
+#add_subdirectory(tests/ode)
