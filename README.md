@@ -4,5 +4,5 @@
 2. include all 3rd libraries as source
 3. only available on Linux right now
 
-##TODO List
+## TODO List
 1. cmake editing to export Mac and Win32 platforms
