@@ -6,7 +6,7 @@
 
 ## How to build
 0. make sure you are on linux platform and have X11 and GLEW installed
-1. download src or zip tp certain directory
+1. download src or zip anywhere you wish, cd to the project root dir
 2. mkdir build 
 3. cd build;cmake..;cmake --build .
 
