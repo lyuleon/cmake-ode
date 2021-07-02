@@ -47,7 +47,7 @@ unsigned int ShaderManager::GetShader( const char * name )
 
 void ShaderManager::Load()
 {
-    const char * shaderDirectory = "data/shaders";
+    const char * shaderDirectory = SHADER_DIR;
     
     DIR * dir = opendir( shaderDirectory );
     

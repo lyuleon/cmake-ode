@@ -44,7 +44,7 @@ Font * FontManager::GetFont( const char * name )
 
 void FontManager::Load()
 {
-    const char * fontDirectory = "data/fonts";
+    const char * fontDirectory = FONTS_DIR;
     
     DIR * dir = opendir( fontDirectory );
     

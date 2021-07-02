@@ -8,6 +8,9 @@ static const float TickRate = 60;
 static const int ServerPort = 10000;
 
 #ifdef CLIENT
+#define SHADER_DIR DATA_DIR "shaders"
+#define FONTS_DIR DATA_DIR "fonts"
+#define STONE_DIR DATA_DIR "stones"
 class GameClient;
 class FontManager;
 class ShaderManager;

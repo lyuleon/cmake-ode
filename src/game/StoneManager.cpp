@@ -76,7 +76,7 @@ void StoneManager::Reload()
 
 void StoneManager::Load()
 {
-    const char * stoneDirectory = "data/stones";
+    const char * stoneDirectory = STONE_DIR;
     
     DIR * dir = opendir( stoneDirectory );
     

@@ -41,6 +41,7 @@ target_compile_options(Client
   PRIVATE 
   	$<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
   	$<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
+  	-DDATA_DIR="${CMAKE_SOURCE_DIR}/data/"
 )
 
 add_executable(Server ${LIB_GAME_SRC})

@@ -12,12 +12,12 @@
 
 
 ## How to use demo
-1. ./build/bin/Client +load cubes 			-- run the cubes demo in single player.
-2. ./build/bin/Client +load lockstep 		-- run the deterministic lockstep demo.
-3. ./build/bin/Client +load snapshot 		-- run the snapshot interpolation demo.
-4. ./build/bin/Client +load compression 	-- run the compression demo.
-5. ./build/bin/Client +load delta 			-- run the delta compression demo.
-6. ./build/bin/Client +load sync 			-- run the state synchronization demo.
+1. ./bin/Client +load cubes 			-- run the cubes demo in single player.
+2. ./bin/Client +load lockstep 		-- run the deterministic lockstep demo.
+3. ./bin/Client +load snapshot 		-- run the snapshot interpolation demo.
+4. ./bin/Client +load compression 	-- run the compression demo.
+5. ./bin/Client +load delta 			-- run the delta compression demo.
+6. ./bin/Client +load sync 			-- run the state synchronization demo.
 
 ## Contols
 1. arrow keys -- strafe
