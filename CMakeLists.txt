@@ -9,6 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS        OFF)
 list(APPEND CMAKE_CXX_FLAGS "-std=c++11")
 
+if(POLICY CMP0072)
+  set(OpenGL_GL_PREFERENCE LEGACY)
+endif()
+
 find_package(OpenGL REQUIRED)
 message(STATUS "Found OpenGL in ${OpenGL_INCLUDE_DIR}")
 find_package(GLEW REQUIRED)
