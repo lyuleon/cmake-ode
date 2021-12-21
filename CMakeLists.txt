@@ -7,7 +7,7 @@ project(externalTest)
 set(CMAKE_CXX_STANDARD          11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS        OFF)
-list(APPEND CMAKE_CXX_FLAGS "-std=c++11")
+list(APPEND CMAKE_CXX_FLAGS "-std=c++11 -pthread")
 
 if(POLICY CMP0072)
   set(OpenGL_GL_PREFERENCE LEGACY)
