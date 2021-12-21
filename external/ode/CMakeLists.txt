@@ -7,7 +7,7 @@ set(ODE_PREFIX_DIR ${CMAKE_CURRENT_BINARY_DIR})
 message(STATUS "ODE_SOURCE_DIR = ${ODE_SOURCE_DIR}")
 message(STATUS "ODE_PREFIX_DIR = ${ODE_PREFIX_DIR}")
 
-set(ODE_CONFIGURE    cd ${ODE_PREFIX_DIR} && ${ODE_SOURCE_DIR}/configure --prefix=${ODE_INSTALL_DIR})
+set(ODE_CONFIGURE    cd ${ODE_PREFIX_DIR} && ${ODE_SOURCE_DIR}/configure --prefix=${ODE_INSTALL_DIR} --disable-demos)
 set(ODE_MAKE         cd ${ODE_PREFIX_DIR} && make)
 set(ODE_INSTALL      cd ${ODE_PREFIX_DIR} && make install)
 
